@@ -40,7 +40,7 @@ function unflipCards() {
 cards.forEach((card) => card.addEventListener('click', flipCard))
 
 // Timer
-let timer = Date.now() + 15 * 1000
+let timer = Date.now() + 30 * 1000
 
 // Update timer after each second
 let t = setInterval(function () {
@@ -59,6 +59,6 @@ let t = setInterval(function () {
   // If timer has finished move to level 2
   if (rem <= 0) {
     clearInterval(t) // Stop the timer interval
-    window.location.href = 'level2/level2.html'
+    window.location.href = ''
   }
 }, 1000) // Update timer every second

@@ -5,20 +5,19 @@ body {
   height: 100vh;
   margin: 8px;
   background-color: rgb(189, 247, 227);
+  display: grid;
+  justify-content: center;
 }
-
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: 150px auto 90px; */
-  width: 400px;
-  height: 300px;
-  column-gap: 10px;
-  /* row-gap: 15px; */
-  padding: 10px;
-  border-radius: 7px;
-  margin: 70px 415px;
-  perspective: 1000px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 80px;
+  max-width: 700px;
+  margin-top: 100px;
+  padding: 20px;
+  justify-items: center;
+  align-items: center;
+  margin: 10px 70px;
 }
 .card {
   height: 100px;
@@ -54,8 +53,8 @@ h1 {
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
   color: rgb(183, 161, 243);
-  margin: 100px;
-  padding: 50px;
+  margin: 10px;
+  padding: 20px;
   margin-top: auto;
 }
 img {
@@ -76,6 +75,7 @@ img {
   height: 50px;
   color: rgb(189, 247, 227);
   font-family: 'Courier New', Courier, monospace;
+  justify-items: right;
 }
 
 .timer {
