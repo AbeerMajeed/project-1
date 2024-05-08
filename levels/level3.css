@@ -1,24 +1,19 @@
 body {
-  /* display: grid;
-  justify-content: center;*/
   align-items: center;
   height: 100vh;
   margin: 8px;
   background-color: rgba(90, 87, 87, 0.039);
+  display: grid;
+  justify-content: center;
 }
-
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: 150px auto 90px; */
-  width: 400px;
-  height: 300px;
-  column-gap: 10px;
-  /* row-gap: 15px; */
-  padding: 0px;
-  border-radius: 7px;
-  margin: 70px 415px;
-  perspective: 1000px;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 80px;
+
+  padding: 60px;
+  justify-items: center;
+  align-items: center;
 }
 .card {
   height: 100px;
@@ -78,12 +73,11 @@ img {
   height: 50px;
   font-family: 'Courier New', Courier, monospace;
   color: rgb(189, 247, 227);
-  font-size: x-large;
+  font-size: larger;
   text-align: center;
   padding-top: 5px;
   font-weight: bold;
-  align-items: right;
-  margin-left: 40%;
+  margin-left: 90%;
 }
 
 .timer {

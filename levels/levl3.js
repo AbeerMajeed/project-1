@@ -22,25 +22,22 @@ function flipCard() {
 //check card match
 function checkMatch() {
   if (firstCard.dataset.framework === secondCard.dataset.framework) {
-    remCards()
+    // remCards
+    firstCard.removeEventlistener('click', flipCard)
+    secondCard.removeEventlistener('click', flipCard)
   } else {
-    unflipCards()
+    // unflipCards()
+    setTimeout(() => {
+      firstCard.classList.remove('flip')
+      secondCard.classList.remove('flip')
+    }, 400)
   }
 }
-function remCards() {
-  firstCard.removeEventlistener('click', flipCard)
-  secondCard.removeEventlistener('click', flipCard)
-}
-function unflipCards() {
-  setTimeout(() => {
-    firstCard.classList.remove('flip')
-    secondCard.classList.remove('flip')
-  }, 400)
-}
+
 cards.forEach((card) => card.addEventListener('click', flipCard))
 
 // Timer
-let timer = Date.now() + 30 * 1000
+let timer = Date.now() + 60 * 1000
 
 // Update timer after each second
 let t = setInterval(function () {
@@ -62,3 +59,24 @@ let t = setInterval(function () {
     window.location.href = ''
   }
 }, 1000) // Update timer every second
+
+//shuffle cards
+const cardsContainer = document.querySelector('.container')
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[array[i], array[j]] = [array[j], array[i]]
+  }
+  return array
+}
+
+const shuffledCards = shuffleArray(Array.from(cards))
+cardsContainer.innerHTML = ''
+shuffledCards.forEach((card) => {
+  cardsContainer.appendChild(card)
+})
+
+shuffledCards.forEach((card) => {
+  card.addEventListener('click', flipCard)
+})

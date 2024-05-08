@@ -1,4 +1,5 @@
 // flipping the cards
+
 const cards = document.querySelectorAll('.card')
 let hasFlippedCard = false
 let firstCard, secondCard
@@ -26,7 +27,7 @@ function checkMatch() {
     firstCard.removeEventlistener('click', flipCard)
     secondCard.removeEventlistener('click', flipCard)
   } else {
-    // unflipCards()
+    // unflipCards
     setTimeout(() => {
       firstCard.classList.remove('flip')
       secondCard.classList.remove('flip')
@@ -36,23 +37,26 @@ function checkMatch() {
 
 cards.forEach((card) => card.addEventListener('click', flipCard))
 
-// // Timer
-let timer = Date.now() + 40 * 1000
+let timer = Date.now() + 50 * 1000
 
-// Update the timer after each second
+// Update timer after each second
 let t = setInterval(function () {
+  // Get the current time
   let now = Date.now()
 
+  // Calculate remaining time
   let rem = timer - now
 
-  // for remaining seconds
+  // Calculate remaining seconds
   let sec = Math.floor((rem % (1000 * 60)) / 1000)
 
+  // Display remaining seconds in the timer element
   document.querySelector('.timer').innerHTML = sec
 
+  // If timer has finished move to level 2
   if (rem <= 0) {
     clearInterval(t) // Stop the timer interval
-    window.location.href = 'levels/level2.html'
+    window.location.href = '/levels/level3.html'
   }
 }, 1000) // Update timer every second
 
@@ -66,6 +70,7 @@ function shuffleArray(array) {
   }
   return array
 }
+
 const shuffledCards = shuffleArray(Array.from(cards))
 cardsContainer.innerHTML = ''
 shuffledCards.forEach((card) => {

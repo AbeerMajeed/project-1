@@ -4,7 +4,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 8px;
-  background-color: rgb(189, 247, 227);
+  background-color: rgba(90, 87, 87, 0.039);
   display: grid;
   justify-content: center;
 }
@@ -49,13 +49,15 @@ body {
   transform: rotateY(180deg);
 }
 
-h1 {
+p {
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
-  color: rgb(183, 161, 243);
+  color: rgb(145, 119, 215);
   margin: 10px;
   padding: 20px;
   margin-top: auto;
+  font-size: 60px;
+  font-weight: bolder;
 }
 img {
   height: 90px;
@@ -69,21 +71,29 @@ img {
 
 #btn {
   background-color: rgb(183, 161, 243);
-  border-radius: 5px;
+  border-radius: 10px;
   border: 0cap;
   width: 100px;
   height: 50px;
-  color: rgb(189, 247, 227);
   font-family: 'Courier New', Courier, monospace;
-  justify-items: right;
+  color: rgb(189, 247, 227);
+  font-size: x-large;
+  text-align: center;
+  padding-top: 5px;
+  font-weight: bold;
+  margin-left: 95%;
 }
 
 .timer {
   background-color: rgb(183, 161, 243);
-  border-radius: 5px;
+  border-radius: 60px;
   border: 0cap;
   width: 100px;
   height: 50px;
   font-family: 'Courier New', Courier, monospace;
   color: rgb(189, 247, 227);
+  font-size: xx-large;
+  text-align: center;
+  padding-top: 20px;
+  font-weight: bold;
 }
