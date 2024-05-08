@@ -34,8 +34,7 @@ function checkMatch() {
 
 cards.forEach((card) => card.addEventListener('click', flipCard))
 
-// Timer
-let time = Date.now() + 40 * 1000
+let time = Date.now() + 5 * 1000
 
 // Update timer after each second
 let t = setInterval(function () {
@@ -46,17 +45,25 @@ let t = setInterval(function () {
   let r = time - now
 
   // Calculate remaining seconds
-  let sec = Math.floor((r % (1000 * 60)) / 1000)
+  let s = Math.floor((r % (1000 * 60)) / 1000)
 
   // Display remaining seconds in the timer element
-  document.querySelector('.timer').innerHTML = sec
+  document.querySelector('.timer').innerHTML = s
 
   // If timer has finished move to level 2
-  if (rem <= 0) {
+  if (r <= 0) {
     clearInterval(t) // Stop the timer interval
-    window.location.href = '../index.html'
+    showLoserMessage()
+    // Function to display "Loser" message
+
+    // window.location.href = '/levels/level3.html'
   }
 }, 1000) // Update timer every second
+
+function showLoserMessage() {
+  const resultMessageElement = document.getElementById('resultMessage')
+  resultMessageElement.textContent = ' you lost. Try again!'
+}
 
 //shuffle cards
 const cardsContainer = document.querySelector('.container')

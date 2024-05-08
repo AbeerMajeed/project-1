@@ -99,3 +99,14 @@ img {
   padding-top: 20px;
   font-weight: bold;
 }
+
+#resultMessage {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  color: rgb(197, 42, 42);
+  margin: 10px;
+  padding: 20px;
+  margin-top: auto;
+  font-size: 60px;
+  font-weight: bolder;
+}
