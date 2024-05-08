@@ -34,7 +34,7 @@ function checkMatch() {
 
 cards.forEach((card) => card.addEventListener('click', flipCard))
 
-let time = Date.now() + 5 * 1000
+let time = Date.now() + 50 * 1000
 
 // Update timer after each second
 let t = setInterval(function () {
