@@ -1,18 +1,17 @@
 // flipping the cards
-
 const cards = document.querySelectorAll('.card')
-let isFlipped = false
+let hasFlippedCard = false
 let firstCard, secondCard
 function flipCard() {
   this.classList.toggle('flip')
 
   // click on two cards
 
-  if (!isFlipped) {
-    isFlipped = true
+  if (!hasFlippedCard) {
+    hasFlippedCard = true
     firstCard = this
   } else {
-    isFlipped = false
+    hasFlippedCard = false
     secondCard = this
 
     checkMatch()
@@ -25,7 +24,7 @@ function checkMatch() {
     firstCard.removeEventlistener('click', flipCard)
     secondCard.removeEventlistener('click', flipCard)
   } else {
-    // unflipCards
+    // unflipCards()
     setTimeout(() => {
       firstCard.classList.remove('flip')
       secondCard.classList.remove('flip')
@@ -35,26 +34,23 @@ function checkMatch() {
 
 cards.forEach((card) => card.addEventListener('click', flipCard))
 
-let time = Date.now() + 50 * 1000
+// // Timer
+let time = Date.now() + 30 * 1000
 
-// Update timer after each second
+// Update the timer after each second
 let t = setInterval(function () {
-  // Get the current time
   let now = Date.now()
 
-  // Calculate remaining time
   let r = time - now
 
-  // Calculate remaining seconds
-  let s = Math.floor((r % (1000 * 60)) / 1000)
+  // for remaining seconds
+  let sec = Math.floor((r % (1000 * 60)) / 1000)
 
-  // Display remaining seconds in the timer element
-  document.querySelector('.timer').innerHTML = s
+  document.querySelector('.timer').innerHTML = sec
 
-  // If timer has finished move to level 2
   if (r <= 0) {
     clearInterval(t) // Stop the timer interval
-    window.location.href = '/levels/level3.html'
+    window.location.href = 'level2.html'
   }
 }, 1000) // Update timer every second
 
@@ -68,7 +64,6 @@ function shuffleArray(array) {
   }
   return array
 }
-
 const shuffledCards = shuffleArray(Array.from(cards))
 cardsContainer.innerHTML = ''
 shuffledCards.forEach((card) => {
@@ -78,3 +73,11 @@ shuffledCards.forEach((card) => {
 shuffledCards.forEach((card) => {
   card.addEventListener('click', flipCard)
 })
+
+function changeColor() {
+  const timerBox = document.getElementsByClassName('timer')
+  timerBox, (style.backgroundColor = rgb(145, 119, 215))
+  setTimeout(() => {
+    timerBox.style.backgroundColor = 'red'
+  }, 10 * 1000)
+}

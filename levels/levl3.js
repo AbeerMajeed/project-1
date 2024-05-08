@@ -5,8 +5,6 @@ let firstCard, secondCard
 function flipCard() {
   this.classList.toggle('flip')
 
-  this.classList.add('flip')
-
   // click on two cards
 
   if (!hasFlippedCard) {
@@ -37,7 +35,7 @@ function checkMatch() {
 cards.forEach((card) => card.addEventListener('click', flipCard))
 
 // Timer
-let timer = Date.now() + 60 * 1000
+let time = Date.now() + 60 * 1000
 
 // Update timer after each second
 let t = setInterval(function () {
@@ -45,10 +43,10 @@ let t = setInterval(function () {
   let now = Date.now()
 
   // Calculate remaining time
-  let rem = timer - now
+  let r = time - now
 
   // Calculate remaining seconds
-  let sec = Math.floor((rem % (1000 * 60)) / 1000)
+  let sec = Math.floor((r % (1000 * 60)) / 1000)
 
   // Display remaining seconds in the timer element
   document.querySelector('.timer').innerHTML = sec

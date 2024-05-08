@@ -6,9 +6,7 @@
 
 #### Technologies:
 
-- limited number of hints
 - Timer
-- 2 themes
 - harder game every level
 
 #### **_Getting started_**
