@@ -34,23 +34,27 @@ function checkMatch() {
 
 cards.forEach((card) => card.addEventListener('click', flipCard))
 
-// // Timer
-let time = Date.now() + 30 * 1000
+// Timer
+let time = Date.now() + 40 * 1000
 
-// Update the timer after each second
+// Update timer after each second
 let t = setInterval(function () {
+  // Get the current time
   let now = Date.now()
 
+  // Calculate remaining time
   let r = time - now
 
-  // for remaining seconds
+  // Calculate remaining seconds
   let sec = Math.floor((r % (1000 * 60)) / 1000)
 
+  // Display remaining seconds in the timer element
   document.querySelector('.timer').innerHTML = sec
 
-  if (r <= 0) {
+  // If timer has finished move to level 2
+  if (rem <= 0) {
     clearInterval(t) // Stop the timer interval
-    window.location.href = 'level2.html'
+    window.location.href = '../index.html'
   }
 }, 1000) // Update timer every second
 
@@ -64,6 +68,7 @@ function shuffleArray(array) {
   }
   return array
 }
+
 const shuffledCards = shuffleArray(Array.from(cards))
 cardsContainer.innerHTML = ''
 shuffledCards.forEach((card) => {
@@ -73,11 +78,3 @@ shuffledCards.forEach((card) => {
 shuffledCards.forEach((card) => {
   card.addEventListener('click', flipCard)
 })
-
-function changeColor() {
-  const timerBox = document.getElementsByClassName('timer')
-  timerBox, (style.backgroundColor = rgb(145, 119, 215))
-  setTimeout(() => {
-    timerBox.style.backgroundColor = 'red'
-  }, 10 * 1000)
-}

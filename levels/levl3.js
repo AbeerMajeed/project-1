@@ -54,7 +54,7 @@ let t = setInterval(function () {
   // If timer has finished move to level 2
   if (rem <= 0) {
     clearInterval(t) // Stop the timer interval
-    window.location.href = ''
+    window.location.href = '../index.html'
   }
 }, 1000) // Update timer every second
 

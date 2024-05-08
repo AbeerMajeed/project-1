@@ -7,8 +7,16 @@
 #### Technologies:
 
 - Timer
+- 3 levels
 - harder game every level
 
-#### **_Getting started_**
+#### Pseudocode
+
+- click Button to start the game
+- Toggle to flip the card when it is clicked
+- check if two cards are matching , if not then unflip the cards
+- Timer will count then move into the next level
+- Cards will be distributed randomly each time
+- Restart button at the end of the game
 
 #####
