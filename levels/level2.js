@@ -3,10 +3,9 @@
 const cards = document.querySelectorAll('.card')
 let isFlipped = false
 let firstCard, secondCard
+
 function flipCard() {
   this.classList.toggle('flip')
-
-  // click on two cards
 
   if (!isFlipped) {
     isFlipped = true
