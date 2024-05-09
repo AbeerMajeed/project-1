@@ -17,14 +17,14 @@ function flipCard() {
     checkMatch()
   }
 }
-//check card match
+//check card if match
 function checkMatch() {
   if (firstCard.dataset.framework === secondCard.dataset.framework) {
-    // remCards
+    // remove event of flip Cards so no flip again
     firstCard.removeEventlistener('click', flipCard)
     secondCard.removeEventlistener('click', flipCard)
   } else {
-    // unflipCards
+    //  unflip so it will be flipped to back face
     setTimeout(() => {
       firstCard.classList.remove('flip')
       secondCard.classList.remove('flip')
@@ -41,16 +41,16 @@ let t = setInterval(function () {
   // Get the current time
   let now = Date.now()
 
-  // Calculate remaining time
+  // the remain time
   let r = time - now
 
   // Calculate remaining seconds
   let s = Math.floor((r % (1000 * 60)) / 1000)
 
-  // Display remaining seconds in the timer element
+  // Display remain seconds in timer
   document.querySelector('.timer').innerHTML = s
 
-  // If timer has finished move to level 2
+  // If timer has finished
   if (r <= 0) {
     clearInterval(t) // Stop the timer interval
     showLoserMessage()
@@ -60,9 +60,10 @@ function showLoserMessage() {
   const resultMessageElement = document.getElementById('resultMessage')
   resultMessageElement.textContent = ' you lost. Try again!'
 }
+
 //shuffle cards
 const cardsContainer = document.querySelector('.container')
-
+// takes an array and shuffle elements using algo
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
@@ -72,9 +73,10 @@ function shuffleArray(array) {
 }
 
 const shuffledCards = shuffleArray(Array.from(cards))
-cardsContainer.innerHTML = ''
+cardsContainer.innerHTML = '' //clear container cards
+//show the shuffled cards
 shuffledCards.forEach((card) => {
-  cardsContainer.appendChild(card)
+  cardsContainer.appendChild(card) //adding cards to the container
 })
 
 shuffledCards.forEach((card) => {
